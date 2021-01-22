@@ -1,14 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, APP_INITIALIZER } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
-import { BoostrapModule } from './shared/bootstrap/boostrap.module';
+import { BoostrapModule } from './core/bootstrap/boostrap.module';
 import { AppComponent } from './app.component';
-import { FooterComponent } from './shared/components/footer/footer.component';
-import { MenuModule } from './shared/components/menu/menu.module';
+import { FooterComponent } from './core/footer/footer.component';
+import { MenuModule } from './core/menu/menu.module';
 import { HomeModule } from './home/home.module';
 import { ModalsModule } from './shared/components/modals/modals.module';
 import { LoaderInterceptorService } from './shared/components/loader/loader-interceptor.service';

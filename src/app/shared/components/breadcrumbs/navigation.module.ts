@@ -1,8 +1,8 @@
-import { BoostrapModule } from './../../bootstrap/boostrap.module';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { BoostrapModule } from './../../../core/bootstrap/boostrap.module';
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 
 @NgModule({

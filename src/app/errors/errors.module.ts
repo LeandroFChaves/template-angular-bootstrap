@@ -3,9 +3,8 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { BrowserModule } from '@angular/platform-browser';
 
-import { BoostrapModule } from '../shared/bootstrap/boostrap.module';
+import { BoostrapModule } from './../core/bootstrap/boostrap.module';
 import { GlobalErrorHandler } from './global-error-handler/global-error-handler';
 import { HttpErrorInterceptor } from './http-error.interceptor';
 import { ErrorsRoutingModule } from './errors-routing.module';

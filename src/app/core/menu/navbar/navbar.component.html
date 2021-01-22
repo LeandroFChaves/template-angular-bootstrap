@@ -1,7 +1,9 @@
 <header class="header">
   <nav class="navbar">
     <div class="container-fluid">
-      <div class="navbar-holder d-flex align-items-center justify-content-between">
+      <div
+        class="navbar-holder d-flex align-items-center justify-content-between"
+      >
         <!-- Navbar Header-->
         <div class="navbar-header">
           <!-- Navbar Brand -->
@@ -15,22 +17,41 @@
             </div>
           </a>
           <!-- Toggle Buttonn-->
-          <a id="toggle-btn" class="menu-btn" [ngClass]="{ active: isShown }"
-            (click)="toggle(); menu.toggle()"><span></span><span></span><span></span></a>
+          <a
+            id="toggle-btn"
+            class="menu-btn"
+            [ngClass]="{ active: isShown }"
+            (click)="toggle(); menu.toggle()"
+            ><span></span><span></span><span></span
+          ></a>
         </div>
 
         <!-- Navbar Menu -->
-        <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
+        <ul
+          class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center"
+        >
           <!-- Notifications-->
           <li *ngIf="qtdNotificacoes > 0" class="nav-item dropdown" dropdown>
-            <a id="notifications" rel="nofollow" data-target="#" data-toggle="dropdown" aria-haspopup="true"
-              aria-expanded="false" class="nav-link" dropdownToggle>
+            <a
+              id="notifications"
+              rel="nofollow"
+              data-target="#"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+              class="nav-link"
+              dropdownToggle
+            >
               <i class="far fa-bell"></i>
               <span class="badge bg-red badge-corner">{{
                 qtdNotificacoes
               }}</span>
             </a>
-            <ul aria-labelledby="notifications" class="dropdown-menu dropdown-menu-notification" *dropdownMenu>
+            <ul
+              aria-labelledby="notifications"
+              class="dropdown-menu dropdown-menu-notification"
+              *dropdownMenu
+            >
               <li *ngFor="let notificacao of topNotificacoes">
                 <a rel="nofollow" href="#" class="dropdown-item">
                   <div class="notification-content">
@@ -42,7 +63,11 @@
                 </a>
               </li>
               <li>
-                <a rel="nofollow" href="#" class="dropdown-item all-notifications text-center">
+                <a
+                  rel="nofollow"
+                  href="#"
+                  class="dropdown-item all-notifications text-center"
+                >
                   <strong>view all notifications</strong>
                 </a>
               </li>
@@ -51,18 +76,34 @@
 
           <!-- Messages -->
           <li *ngIf="qtdMensagens > 0" class="nav-item dropdown" dropdown>
-            <a id="messages" rel="nofollow" data-target="#" data-toggle="dropdown" aria-haspopup="true"
-              aria-expanded="false" class="nav-link" dropdownToggle>
+            <a
+              id="messages"
+              rel="nofollow"
+              data-target="#"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+              class="nav-link"
+              dropdownToggle
+            >
               <i class="far fa-envelope"></i>
               <span class="badge bg-orange badge-corner">{{
                 qtdMensagens
               }}</span>
             </a>
-            <ul aria-labelledby="notifications" class="dropdown-menu dropdown-menu-messages" *dropdownMenu>
+            <ul
+              aria-labelledby="notifications"
+              class="dropdown-menu dropdown-menu-messages"
+              *dropdownMenu
+            >
               <li>
                 <a rel="nofollow" href="#" class="dropdown-item d-flex">
                   <div class="msg-profile">
-                    <img src="assets/images/faces/usuario-2.jpg" alt="..." class="img-fluid rounded-circle" />
+                    <img
+                      src="assets/images/faces/usuario-2.jpg"
+                      alt="..."
+                      class="img-fluid rounded-circle"
+                    />
                   </div>
                   <div class="msg-body">
                     <h3 class="h5">Jason Doe</h3>
@@ -71,7 +112,11 @@
                 </a>
               </li>
               <li>
-                <a rel="nofollow" href="#" class="dropdown-item all-notifications text-center">
+                <a
+                  rel="nofollow"
+                  href="#"
+                  class="dropdown-item all-notifications text-center"
+                >
                   <strong>Read all messages</strong>
                 </a>
               </li>
