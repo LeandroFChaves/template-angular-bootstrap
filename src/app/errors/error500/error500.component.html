@@ -1,0 +1,69 @@
+<div class="card" style="width: 18rem">
+  <div class="error-header">
+    <h1 class="display-4">500!</h1>
+    <p>Erro interno do servidor</p>
+  </div>
+
+  <div class="card-body">
+    <p>Foi encontrada uma condição inesperada.</p>
+
+    <div class="div-botoes">
+      <a
+        class="btn btn-primary btn-errors"
+        [routerLink]="['/home']"
+        role="button"
+      >
+        <i class="fas fa-home mr-2"></i>Início
+      </a>
+      <a
+        class="btn btn-primary btn-errors"
+        role="button"
+        (click)="isShowDetails()"
+        *ngIf="log"
+      >
+        <i class="fas fa-align-justify mr-2"></i>Mais detalhes
+      </a>
+      <a
+        class="btn btn-primary btn-errors"
+        href="javascript:history.back()"
+        role="button"
+      >
+        <i class="fas fa-undo-alt mr-2"></i>Voltar
+      </a>
+    </div>
+
+    <br /><br />
+    <form class="error-message" *ngIf="showDetails">
+      <fieldset disabled>
+        <div class="form-group">
+          <label for="url">URL</label>
+          <input
+            type="text"
+            id="url"
+            name="url"
+            class="form-control"
+            [(ngModel)]="log.url"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="url">Mensagem</label>
+          <input
+            type="text"
+            id="mensagem"
+            name="mensagem"
+            class="form-control"
+            [(ngModel)]="log.message"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="stack">Stacktracer</label>
+          <textarea class="form-control" id="stack" rows="5">{{
+            log.stack
+          }}</textarea>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</div>

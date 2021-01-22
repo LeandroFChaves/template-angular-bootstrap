@@ -1,0 +1,93 @@
+<header class="header">
+  <nav class="navbar">
+    <div class="container-fluid">
+      <div class="navbar-holder d-flex align-items-center justify-content-between">
+        <!-- Navbar Header-->
+        <div class="navbar-header">
+          <!-- Navbar Brand -->
+          <a href="index.html" class="navbar-brand">
+            <div *ngIf="isShown" class="brand-text brand-big">
+              <span>Template </span>
+              <strong>Bootstrap</strong>
+            </div>
+            <div *ngIf="!isShown" class="brand-text brand-small">
+              <strong>TB</strong>
+            </div>
+          </a>
+          <!-- Toggle Buttonn-->
+          <a id="toggle-btn" class="menu-btn" [ngClass]="{ active: isShown }"
+            (click)="toggle(); menu.toggle()"><span></span><span></span><span></span></a>
+        </div>
+
+        <!-- Navbar Menu -->
+        <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
+          <!-- Notifications-->
+          <li *ngIf="qtdNotificacoes > 0" class="nav-item dropdown" dropdown>
+            <a id="notifications" rel="nofollow" data-target="#" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false" class="nav-link" dropdownToggle>
+              <i class="far fa-bell"></i>
+              <span class="badge bg-red badge-corner">{{
+                qtdNotificacoes
+              }}</span>
+            </a>
+            <ul aria-labelledby="notifications" class="dropdown-menu dropdown-menu-notification" *dropdownMenu>
+              <li *ngFor="let notificacao of topNotificacoes">
+                <a rel="nofollow" href="#" class="dropdown-item">
+                  <div class="notification-content">
+                    <i [class]="notificacao.class"></i>{{ notificacao.message }}
+                  </div>
+                  <div class="notification-time">
+                    <small>{{ notificacao.time }}</small>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a rel="nofollow" href="#" class="dropdown-item all-notifications text-center">
+                  <strong>view all notifications</strong>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <!-- Messages -->
+          <li *ngIf="qtdMensagens > 0" class="nav-item dropdown" dropdown>
+            <a id="messages" rel="nofollow" data-target="#" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false" class="nav-link" dropdownToggle>
+              <i class="far fa-envelope"></i>
+              <span class="badge bg-orange badge-corner">{{
+                qtdMensagens
+              }}</span>
+            </a>
+            <ul aria-labelledby="notifications" class="dropdown-menu dropdown-menu-messages" *dropdownMenu>
+              <li>
+                <a rel="nofollow" href="#" class="dropdown-item d-flex">
+                  <div class="msg-profile">
+                    <img src="assets/images/faces/usuario-2.jpg" alt="..." class="img-fluid rounded-circle" />
+                  </div>
+                  <div class="msg-body">
+                    <h3 class="h5">Jason Doe</h3>
+                    <span>Sent You Message</span>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a rel="nofollow" href="#" class="dropdown-item all-notifications text-center">
+                  <strong>Read all messages</strong>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <!-- Navbar-->
+          <app-navbar-user></app-navbar-user>
+
+          <div class="notification">
+            <app-notification></app-notification>
+          </div>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <app-sidebar #menu></app-sidebar>
+</header>

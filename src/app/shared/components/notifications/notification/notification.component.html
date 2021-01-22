@@ -1,0 +1,8 @@
+<div *ngFor="let alert of alerts" class="no-margin" role="alert">
+  <alert
+    [type]="getAlertClass(alert)"
+    [dismissible]="dismissible"
+    (onClosed)="onClosed(alert)"
+    >{{ alert.message }}
+  </alert>
+</div>

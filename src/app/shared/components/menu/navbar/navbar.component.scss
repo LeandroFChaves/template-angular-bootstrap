@@ -1,0 +1,26 @@
+.brand-small {
+  display: block !important;
+}
+
+.dropdown-menu-notification {
+  top: 0px;
+  left: 0px;
+  will-change: auto;
+  position: absolute;
+  transform: translate(-200px, 5px) !important;
+}
+
+.dropdown-menu-messages {
+  top: 0px;
+  left: 0px;
+  will-change: auto;
+  position: absolute;
+  transform: translate(-210px, 5px) !important;
+}
+
+.notification {
+  position: absolute;
+  width: 30%;
+  right: 15px;
+  top: 10px;
+}

@@ -1,0 +1,82 @@
+<div class="page">
+  <div class="page-content d-flex align-items-stretch">
+    <nav id="sidenavbar" class="side-navbar" [ngClass]="{ shrinked: !isShown }">
+      <!-- Sidebar Header-->
+      <div class="sidebar-header d-flex align-items-center">
+        <div class="avatar">
+          <img
+            src="assets/images/faces/usuario-2.jpg"
+            alt="..."
+            class="img-fluid rounded-circle"
+          />
+        </div>
+        <div class="title">
+          <h1 class="h4">Nome Completo</h1>
+          <p>Info</p>
+        </div>
+      </div>
+
+      <ul class="list-unstyled">
+        <li>
+          <a routerLink="/home" routerLinkActive="active-link"
+            ><i class="fas fa-home"></i>Início
+          </a>
+        </li>
+        <li *ngIf="menuGrupo1.length > 0">
+          <a
+            (click)="exibeMenu('cadastros', $event.target)"
+            aria-expanded="false"
+            data-toggle="collapse"
+          >
+            <i class="fas fa-copy"></i>Páginas
+          </a>
+          <ul id="cadastros" class="collapse list-unstyled">
+            <li *ngFor="let menuPagina of menuGrupo1">
+              <a
+                [routerLink]="menuPagina.pagina"
+                routerLinkActive="active-link"
+                >{{ menuPagina.descricao }}</a
+              >
+            </li>
+          </ul>
+        </li>
+
+        <li *ngIf="menuGrupo2.length > 0">
+          <a
+            (click)="exibeMenu('paginas', $event.target)"
+            aria-expanded="false"
+            data-toggle="collapse"
+          >
+            <i class="fas fa-bug"></i>Erros
+          </a>
+          <ul id="paginas" class="collapse list-unstyled">
+            <li *ngFor="let menuPagina of menuGrupo2">
+              <a
+                [routerLink]="menuPagina.pagina"
+                routerLinkActive="active-link"
+                >{{ menuPagina.descricao }}</a
+              >
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <a routerLink="/sobre" routerLinkActive="active-link">
+            <i class="fas fa-laptop"></i>Sobre
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="content-inner" [ngClass]="{ active: !isShown }">
+      <!-- Rastro do caminho percorrido pelo usuário -->
+      <app-breadcrumb></app-breadcrumb>
+
+      <section>
+        <div class="container-fluid">
+          <router-outlet></router-outlet>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
