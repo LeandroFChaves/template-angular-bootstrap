@@ -19,6 +19,7 @@ import { SobreModule } from './sobre/sobre.module';
 import { NotificationModule } from './shared/components/notifications/notification.module';
 import { PostsModule } from './posts/posts.module';
 import { LoaderModule } from './shared/components/loader/loader.module';
+import { LoginModule } from './login/login.module';
 
 @NgModule({
   declarations: [AppComponent, FooterComponent],
@@ -36,6 +37,7 @@ import { LoaderModule } from './shared/components/loader/loader.module';
     ErrorsModule,
     NotificationModule,
     LoaderModule,
+    LoginModule,
     MenuModule,
     NavigationModule,
     HomeModule,

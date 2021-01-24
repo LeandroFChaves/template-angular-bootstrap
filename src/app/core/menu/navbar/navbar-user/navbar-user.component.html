@@ -27,9 +27,12 @@
         <div class="dropdown-user-details-email">teste@teste.com.br</div>
       </div>
     </h6>
+
     <div class="dropdown-divider"></div>
     <a class="dropdown-item"> <i class="fas fa-sliders-h"></i>Preferências </a>
     <div class="dropdown-divider"></div>
-    <a class="dropdown-item"> <i class="fas fa-sign-out-alt"></i>Sair </a>
+    <a class="dropdown-item" (click)="logout()">
+      <i class="fas fa-sign-out-alt"></i>Sair
+    </a>
   </div>
 </li>
