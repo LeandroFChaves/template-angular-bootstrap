@@ -1,4 +1,4 @@
-import { Injectable, Injector } from '@angular/core';
+import { Injectable } from '@angular/core';
 import {
   HttpEvent,
   HttpInterceptor,
@@ -13,7 +13,7 @@ import { NgxSpinnerService } from 'ngx-spinner';
 @Injectable({
   providedIn: 'root',
 })
-export class LoaderInterceptorService implements HttpInterceptor {
+export class LoaderInterceptor implements HttpInterceptor {
   constructor(private spinner: NgxSpinnerService) {}
 
   intercept(

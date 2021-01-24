@@ -4,7 +4,7 @@ import { NgxSpinnerModule } from 'ngx-spinner';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { LoaderComponent } from './loader/loader.component';
-import { LoaderInterceptorService } from './loader.interceptor.service';
+import { LoaderInterceptor } from './loader.interceptor';
 
 @NgModule({
   declarations: [LoaderComponent],
@@ -16,7 +16,7 @@ import { LoaderInterceptorService } from './loader.interceptor.service';
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
-      useClass: LoaderInterceptorService,
+      useClass: LoaderInterceptor,
       multi: true,
     },
   ],
