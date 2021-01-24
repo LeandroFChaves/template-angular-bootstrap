@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { BoostrapModule } from './../bootstrap/boostrap.module';
+import { LoaderModule } from './../../shared/components/loader/loader.module';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { NavbarUserComponent } from './navbar/navbar-user/navbar-user.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -18,6 +19,7 @@ import { NotificationModule } from './../../shared/components/notifications/noti
     BoostrapModule,
     NavigationModule,
     NotificationModule,
+    LoaderModule,
   ],
 
   exports: [SidebarComponent, NavbarComponent, NavbarUserComponent],

@@ -8,40 +8,31 @@ import {
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
-
-import { LoaderService } from './loader.service';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Injectable({
   providedIn: 'root',
 })
 export class LoaderInterceptorService implements HttpInterceptor {
-  constructor(private loaderService: LoaderService) {}
+  constructor(private spinner: NgxSpinnerService) {}
 
   intercept(
     req: HttpRequest<any>,
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
-    this.showLoader();
+    this.spinner.show();
 
     return next.handle(req).pipe(
       tap(
         (event: HttpEvent<any>) => {
           if (event instanceof HttpResponse) {
-            this.hideLoader();
+            this.spinner.hide();
           }
         },
         (err: any) => {
-          this.hideLoader();
+          this.spinner.hide();
         }
       )
     );
-  }
-
-  private showLoader(): void {
-    this.loaderService.show();
-  }
-
-  private hideLoader(): void {
-    this.loaderService.hide();
   }
 }

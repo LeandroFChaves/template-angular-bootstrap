@@ -11,8 +11,7 @@ import { FooterComponent } from './core/footer/footer.component';
 import { MenuModule } from './core/menu/menu.module';
 import { HomeModule } from './home/home.module';
 import { ModalsModule } from './shared/components/modals/modals.module';
-import { LoaderInterceptorService } from './shared/components/loader/loader-interceptor.service';
-import { LoaderComponent } from './shared/components/loader/loader/loader.component';
+import { LoaderInterceptorService } from './shared/components/loader/loader.interceptor.service';
 import { ErrorsModule } from './errors/errors.module';
 import { NavigationModule } from './shared/components/breadcrumbs/navigation.module';
 import { Pagina1Module } from './pagina1/pagina1.module';
@@ -22,7 +21,7 @@ import { NotificationModule } from './shared/components/notifications/notificati
 import { PostsModule } from './posts/posts.module';
 
 @NgModule({
-  declarations: [AppComponent, FooterComponent, LoaderComponent],
+  declarations: [AppComponent, FooterComponent],
 
   imports: [
     BrowserModule,
