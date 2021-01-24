@@ -60,6 +60,25 @@
           </ul>
         </li>
 
+        <li *ngIf="menuGrupo3.length > 0">
+          <a
+            (click)="exibeMenu('http-requests', $event.target)"
+            aria-expanded="false"
+            data-toggle="collapse"
+          >
+            <i class="fas fa-exchange-alt"></i>HTTP Requests
+          </a>
+          <ul id="http-requests" class="collapse list-unstyled">
+            <li *ngFor="let menuPagina of menuGrupo3">
+              <a
+                [routerLink]="menuPagina.pagina"
+                routerLinkActive="active-link"
+                >{{ menuPagina.descricao }}</a
+              >
+            </li>
+          </ul>
+        </li>
+
         <li>
           <a routerLink="/sobre" routerLinkActive="active-link">
             <i class="fas fa-laptop"></i>Sobre

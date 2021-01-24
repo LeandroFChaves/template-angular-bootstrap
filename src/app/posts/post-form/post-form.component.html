@@ -1,0 +1,105 @@
+<div>
+  <h3>Novo Post</h3>
+  <hr class="linha-titulo" />
+
+  <form #form="ngForm" [formGroup]="formPost">
+    <div class="form-row">
+      <div class="form-group col-sm-12">
+        <label for="title">Title</label>
+        <input
+          type="text"
+          class="form-control"
+          id="title"
+          placeholder="Título do post"
+          formControlName="title"
+          [ngClass]="{
+            'is-invalid':
+              (form.submitted || formPost.get('title').touched) &&
+              hasError('title')
+          }"
+        />
+        <div
+          class="invalid-feedback"
+          *ngIf="hasError('title') && hasError('title')['required']"
+        >
+          Por favor informe um título para o post.
+        </div>
+        <div
+          class="invalid-feedback"
+          *ngIf="hasError('title') && hasError('title')['minlength']"
+        >
+          Title precisa ter no mínimo
+          {{ hasError('title')['minlength'].requiredLength }} caracteres.
+        </div>
+        <div
+          class="invalid-feedback"
+          *ngIf="hasError('title') && hasError('title')['maxlength']"
+        >
+          Title precisa ter no máximo
+          {{ hasError('title')['maxlength'].requiredLength }}
+          caracteres.
+        </div>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-sm-12">
+        <label for="body">Body</label>
+        <input
+          type="text"
+          class="form-control"
+          id="body"
+          placeholder="Título do post"
+          formControlName="body"
+          [ngClass]="{
+            'is-invalid':
+              (form.submitted || formPost.get('body').touched) &&
+              hasError('body')
+          }"
+        />
+        <div
+          class="invalid-feedback"
+          *ngIf="hasError('body') && hasError('body')['required']"
+        >
+          Campo obrigatório.
+        </div>
+        <div
+          class="invalid-feedback"
+          *ngIf="hasError('body') && hasError('body')['maxlength']"
+        >
+          Body precisa ter no máximo
+          {{ hasError('body')['maxlength'].requiredLength }}
+          caracteres.
+        </div>
+      </div>
+    </div>
+
+    <br />
+    <div class="active-bar float-right">
+      <button
+        class="btn btn-primary btn-salvar-cancelar"
+        (click)="cancelar()"
+        *ngIf="isReadOnly"
+      >
+        <i class="fas fa-undo-alt pr-2"></i> <span>Fechar</span>
+      </button>
+      <button
+        type="submit"
+        class="btn btn-danger btn-salvar-cancelar mr-2"
+        (click)="cancelar()"
+        *ngIf="!isReadOnly"
+      >
+        <i class="fas fa-ban pr-2"></i> <span>Cancelar</span>
+      </button>
+      <button
+        type="submit"
+        class="btn btn-success btn-salvar-cancelar"
+        (click)="salvar()"
+        [disabled]="formPost.invalid || formPost.pending"
+        *ngIf="!isReadOnly"
+      >
+        <i class="fas fa-sd-card pr-2"></i> <span>Salvar</span>
+      </button>
+    </div>
+  </form>
+</div>

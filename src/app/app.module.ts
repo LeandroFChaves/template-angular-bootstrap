@@ -19,6 +19,7 @@ import { Pagina1Module } from './pagina1/pagina1.module';
 import { Pagina2Module } from './pagina2/pagina2.module';
 import { SobreModule } from './sobre/sobre.module';
 import { NotificationModule } from './shared/components/notifications/notification.module';
+import { PostsModule } from './posts/posts.module';
 
 @NgModule({
   declarations: [AppComponent, FooterComponent, LoaderComponent],
@@ -40,6 +41,7 @@ import { NotificationModule } from './shared/components/notifications/notificati
     HomeModule,
     Pagina1Module,
     Pagina2Module,
+    PostsModule,
     SobreModule,
   ],
 

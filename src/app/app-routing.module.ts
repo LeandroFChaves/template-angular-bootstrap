@@ -41,6 +41,11 @@ const routes: Routes = [
   },
 
   {
+    path: 'posts',
+    loadChildren: './posts/posts.module#PostsModule',
+  },
+
+  {
     path: 'sobre',
     loadChildren: './sobre/sobre.module#SobreModule',
   },

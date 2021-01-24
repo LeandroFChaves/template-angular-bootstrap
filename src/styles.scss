@@ -1,5 +1,8 @@
-@import './assets/css/style.blue.premium';
+/* CSS do Bootstrap 4 */
 @import '~bootstrap/dist/css/bootstrap.min.css';
+
+/* Template */
+@import './assets/css/style.blue.premium';
 @import './assets/css/fontastic';
 
 .margin-zero {
@@ -10,4 +13,8 @@
 
 .btn-salvar-cancelar {
   width: 125px;
+}
+
+.linha-titulo {
+  height: 1px;
 }

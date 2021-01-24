@@ -9,14 +9,15 @@ export class SidebarComponent implements OnInit {
   paginas: any = [];
   menuGrupo1: any[] = [];
   menuGrupo2: any[] = [];
+  menuGrupo3: any[] = [];
   isShown: boolean = true;
 
   constructor() {}
 
   ngOnInit(): void {
     this.menuGrupo1 = [
-      { pagina: 'pagina1', descricao: 'Página Exemplo 1', grupo: 'grupo2' },
-      { pagina: 'pagina2', descricao: 'Página Exemplo 2', grupo: 'grupo2' },
+      { pagina: 'pagina1', descricao: 'Página Exemplo 1', grupo: 'grupo1' },
+      { pagina: 'pagina2', descricao: 'Página Exemplo 2', grupo: 'grupo1' },
     ];
 
     this.menuGrupo2 = [
@@ -25,6 +26,10 @@ export class SidebarComponent implements OnInit {
       { pagina: 'errors/500', descricao: 'Erro 500', grupo: 'grupo2' },
       { pagina: 'errors/503', descricao: 'Erro 503', grupo: 'grupo2' },
       { pagina: 'errors/504', descricao: 'Erro 504', grupo: 'grupo2' },
+    ];
+
+    this.menuGrupo3 = [
+      { pagina: 'posts', descricao: 'Posts', grupo: 'grupo3' },
     ];
   }
 

@@ -1597,7 +1597,6 @@ footer.main-footer p {
 */
 .form-control {
   border: 1px solid #dee2e6;
-  border-radius: 0;
   padding: 0.375rem 0.75rem;
 }
 
@@ -3453,7 +3452,7 @@ ul.messenger-theme-flat .messenger-spinner {
 
 /*
 * ==========================================================
-*     GOOGLE MAPS 
+*     GOOGLE MAPS
 * ==========================================================
 */
 .map {
@@ -4639,8 +4638,8 @@ STYLE SWITCHER FOR DEMO
   color: #495057;
 }
 
-/* ========================================= 
-   THEMING OF BOOTSTRAP COMPONENTS           
+/* =========================================
+   THEMING OF BOOTSTRAP COMPONENTS
    ========================================= */
 /*
  * 1. NAVBAR
@@ -5481,7 +5480,7 @@ STYLE SWITCHER FOR DEMO
 }
 
 /*
- * 3. TYPE  
+ * 3. TYPE
  */
 body {
   font-family: 'Poppins', sans-serif;
