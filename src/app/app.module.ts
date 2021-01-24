@@ -1,8 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { JwtModule } from '@auth0/angular-jwt';
 
 import { AppRoutingModule } from './app-routing.module';
 import { BoostrapModule } from './core/bootstrap/boostrap.module';
@@ -20,6 +20,7 @@ import { NotificationModule } from './shared/components/notifications/notificati
 import { PostsModule } from './posts/posts.module';
 import { LoaderModule } from './shared/components/loader/loader.module';
 import { LoginModule } from './login/login.module';
+import { environment } from './../environments/environment';
 
 @NgModule({
   declarations: [AppComponent, FooterComponent],
@@ -28,9 +29,17 @@ import { LoginModule } from './login/login.module';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    FormsModule,
-    ReactiveFormsModule,
     HttpClientModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: () => {
+          return localStorage.getItem('access_token');
+        },
+        authScheme: 'Bearer ',
+        allowedDomains: environment.allowedDomains,
+        disallowedRoutes: environment.disallowedRoutes,
+      },
+    }),
 
     BoostrapModule,
     ModalsModule,

@@ -6,7 +6,6 @@ import {
   Router,
 } from '@angular/router';
 import { Observable } from 'rxjs';
-import { take, map } from 'rxjs/operators';
 
 import { AuthService } from './auth.service';
 
@@ -20,14 +19,12 @@ export class AuthGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): boolean | Observable<boolean> | Promise<boolean> {
-    return this.authService.isLoggedIn.pipe(take(1)).pipe(
-      map((isLoggedIn: boolean) => {
-        if (!isLoggedIn) {
-          this.router.navigate(['/login']);
-          return false;
-        }
-        return true;
-      })
-    );
+    if (this.authService.isTokenExpired()) {
+      this.router.navigate(['/login']);
+      return false;
+    }
+
+    this.authService.loggedIn.next(true);
+    return true;
   }
 }
