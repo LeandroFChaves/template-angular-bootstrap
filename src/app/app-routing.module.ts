@@ -34,38 +34,37 @@ const routes: Routes = [
   },
 
   {
-    path: 'autores',
-    canActivate: [AuthGuard],
-    loadChildren: './autores/autores.module#AutoresModule',
-  },
-
-  {
     path: 'pagina1',
     canActivate: [AuthGuard],
-    loadChildren: './pagina1/pagina1.module#Pagina1Module',
+    loadChildren: () =>
+      import('./pagina1/pagina1.module').then((m) => m.Pagina1Module),
   },
 
   {
     path: 'pagina2',
     canActivate: [AuthGuard],
-    loadChildren: './pagina2/pagina2.module#Pagina2Module',
+    loadChildren: () =>
+      import('./pagina2/pagina2.module').then((m) => m.Pagina2Module),
   },
 
   {
     path: 'posts',
     canActivate: [AuthGuard],
-    loadChildren: './posts/posts.module#PostsModule',
+    loadChildren: () =>
+      import('./posts/posts.module').then((m) => m.PostsModule),
   },
 
   {
     path: 'sobre',
     canActivate: [AuthGuard],
-    loadChildren: './sobre/sobre.module#SobreModule',
+    loadChildren: () =>
+      import('./sobre/sobre.module').then((m) => m.SobreModule),
   },
 
   {
     path: 'errors',
-    loadChildren: './errors/errors.module#ErrorsModule',
+    loadChildren: () =>
+      import('./errors/errors.module').then((m) => m.ErrorsModule),
   },
 ];
 
